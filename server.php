@@ -78,9 +78,9 @@ function determineWinner($players)
     $choices = array_column($players, 'choice');
 
     $winningCombinations = [
-        'rock'      => 'scissor',
-        'paper'     => 'rock',
-        'scissor'   => 'paper'
+        'rock' => 'scissor',
+        'paper' => 'rock',
+        'scissor' => 'paper'
     ];
 
     if ($choices[0] === $choices[1]) {
@@ -92,9 +92,9 @@ function determineWinner($players)
     }
 
     return [
-        'winner'    => $winner,
-        'P1'        => $choices[0],
-        'P2'        => $choices[1]
+        'winner' => $winner,
+        'P1' => $choices[0],
+        'P2' => $choices[1]
     ];
 }
 
