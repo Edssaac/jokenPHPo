@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f8c291;
+    user-select: none;
+}
+
+#game {
+    padding: 25px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+#title {
+    font-weight: 600;
+    font-size: 32px;
+    text-decoration: underline;
+}
+
+#player {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 200px;
+    height: 50px;
+    margin: 10px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #333;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option:hover {
+    background-color: #444;
+}
+
+.option:active {
+    transform: scale(0.95);
+}
+
+.selected {
+    border: 2px solid #f8c291;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #3c3c3c, #5a5a5a);
+}
+
+#alert {
+    padding: 25px;
+    font-size: 45px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid #f8c291;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#status {
+    height: 50px;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#choices {
+    height: 15px;
+    font-size: 15px;
+    font-weight: 650;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#spinner {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border: 5px solid #333;
+    border-top: 5px solid #f8c291;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .option {
+        flex: 1 1 100%;
+    }
+}
