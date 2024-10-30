@@ -28,8 +28,9 @@ Se você é um desenvolvedor interessado em contribuir ou entender melhor o func
 <br>
 
 **Requisitos de Instalação:**
-- PHP - `7.4.33`
-- Swoole - `5.1.4`
+
+![PHP](https://img.shields.io/badge/PHP-7.4.33-777BB4?style=for-the-badge&logo=php)
+![Swoole](https://img.shields.io/badge/SWOOLE-5.1.4-blue?style=for-the-badge)
 
 <br>
 
@@ -49,7 +50,7 @@ cd jokenPHPo
 
 **Como Executar:**
 
-> Certifique-se de possuir o [Swoole](https://openswoole.com/) em sua máquina.
+> Certifique-se de possuir o [Swoole](https://openswoole.com) em sua máquina.
 
 Após concluir as etapas de instalação mencionadas acima, você está pronto para iniciar a aplicação. Siga os passos abaixo:
 
@@ -68,7 +69,7 @@ Abra o terminal e execute o seguinte comando na raiz do projeto:
 
 3. Uma vez que o servidor esteja em execução, abra seu navegador e acesse a seguinte URL na barra de endereço:
    ```
-   http://localhost:8080/
+   http://localhost:8080
    ```
    Esta ação carregará a página inicial da aplicação, tornando o jogo acessível. Agora, cada jogador pode abrir uma nova janela e iniciar a partida. (Este procedimento é destinado apenas para testes locais.)
 
@@ -80,4 +81,4 @@ Se desejar encerrar o servidor, basta pressionar `ctrl + C` no terminal onde o s
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/edssaac)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:edssaac@gmail.com)
 [![Outlook](https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](mailto:edssaac@outlook.com)
-[![Linkedin](https://img.shields.io/badge/LinkedIn-black.svg?style=for-the-badge&logo=linkedin&color=informational)](https://www.linkedin.com/in/edssaac/)
+[![Linkedin](https://img.shields.io/badge/LinkedIn-black.svg?style=for-the-badge&logo=linkedin&color=informational)](https://www.linkedin.com/in/edssaac)
