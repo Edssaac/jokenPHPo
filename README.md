@@ -15,6 +15,7 @@ Implementar uma aplicação em PHP com Swoole e WebSocket para comunicação em 
 
 **Tecnologias Utilizadas:**
 
+![DOCKER](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=fff)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![SWOOLE](https://img.shields.io/badge/SWOOLE-blue?&style=for-the-badge)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -25,16 +26,14 @@ Implementar uma aplicação em PHP com Swoole e WebSocket para comunicação em 
 
 Se você é um desenvolvedor interessado em contribuir ou entender melhor o funcionamento do projeto, aqui estão algumas informações adicionais:
 
-<br>
+**Ambiente:**
 
-**Requisitos de Instalação:**
+![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?style=for-the-badge&logo=php)
+![SWOOLE](https://img.shields.io/badge/SWOOLE-5.1.4-blue?style=for-the-badge)
 
-![PHP](https://img.shields.io/badge/PHP-7.4.33-777BB4?style=for-the-badge&logo=php)
-![Swoole](https://img.shields.io/badge/SWOOLE-5.1.4-blue?style=for-the-badge)
+**Instruções de Instalação e Configuração:**
 
-<br>
-
-**Instruções de Instalação:**
+> Atenção: Obrigatório o uso de Docker em sua máquina.
 
 1. Clone o repositório do projeto:
 ```
@@ -46,35 +45,24 @@ git clone https://github.com/edssaac/jokenPHPo
 cd jokenPHPo
 ```
 
-<br>
+3. Inicie a aplicação atráves do script que configura o Docker:
+```
+.ci_cd/init.sh  
+```
+Com isso a aplicação estará acessivel: [http://localhost:8080](http://localhost:8080)
 
-**Como Executar:**
+Agora, cada jogador pode abrir uma nova janela e iniciar a partida.
 
-> Certifique-se de possuir o [Swoole](https://openswoole.com) em sua máquina.
+---
 
-Após concluir as etapas de instalação mencionadas acima, você está pronto para iniciar a aplicação. Siga os passos abaixo:
-
-1. Suba o servidor:
-   ```
-   php server.php
-   ```
-   Isso iniciará o WebSocket na porta 8081.
-
-2. Como esta é uma aplicação simples, você pode usar o servidor embutido do PHP para servir a aplicação. <br>
-Abra o terminal e execute o seguinte comando na raiz do projeto:
-   ```
-   php -S localhost:8080
-   ```
-   Isso iniciará um servidor local na porta 8080.
-
-3. Uma vez que o servidor esteja em execução, abra seu navegador e acesse a seguinte URL na barra de endereço:
-   ```
-   http://localhost:8080
-   ```
-   Esta ação carregará a página inicial da aplicação, tornando o jogo acessível. Agora, cada jogador pode abrir uma nova janela e iniciar a partida. (Este procedimento é destinado apenas para testes locais.)
-
-Certifique-se de que o servidor PHP embutido esteja sempre em execução enquanto você estiver trabalhando na aplicação localmente. <br>
-Se desejar encerrar o servidor, basta pressionar `ctrl + C` no terminal onde o servidor está sendo executado.
+4. Quando desejar encerrar a aplicação, use:
+```
+.ci_cd/stop.sh
+```
+Caso deseje encerrar e remover os volumes criados, use:
+```
+.ci_cd/stop.sh -v
+```
 
 ## Contato
 
