@@ -2,7 +2,7 @@
 
 use Swoole\WebSocket\Server;
 
-$server = new Server("127.0.0.1", 8081);
+$server = new Server("0.0.0.0", 8081);
 $players = [];
 
 const MAX_PLAYERS = 2;

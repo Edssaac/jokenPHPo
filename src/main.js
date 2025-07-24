@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://127.0.0.1:8081');
+const ws = new WebSocket('ws://localhost:8081');
 
 ws.onmessage = (event) => {
     const data = JSON.parse(event.data);

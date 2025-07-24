@@ -1,0 +1,37 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: php
+    restart: always
+    depends_on:
+      - php-ws
+    env_file:
+      - .docker.env
+    volumes:
+      - ../:/var/www/html
+    ports:
+      - 8080:80
+    networks:
+      - app-network
+  php-ws:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    container_name: php-ws
+    restart: always
+    env_file:
+      - .docker.env
+    environment:
+      - RUN_WS=1
+    volumes:
+      - ../:/var/www/html
+    ports:
+      - 8081:8081
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
