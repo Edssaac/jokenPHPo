@@ -1,4 +1,4 @@
-const ws = new WebSocket('ws://localhost:8081');
+const ws = new WebSocket("ws://localhost:8081");
 
 ws.onmessage = (event) => {
     const data = JSON.parse(event.data);
@@ -15,7 +15,7 @@ ws.onmessage = (event) => {
 };
 
 const blockRoom = () => {
-    const board = document.getElementById('board');
+    const board = document.getElementById("board");
 
     board.innerHTML = `
         <div id="alert">
@@ -26,48 +26,48 @@ const blockRoom = () => {
 }
 
 const setPlayer = (playerNumber) => {
-    const player = document.getElementById('player');
+    const player = document.getElementById("player");
 
     player.innerHTML = `Jogador #${playerNumber}`;
 }
 
 const setStatus = (message) => {
-    const status = document.getElementById('status');
+    const status = document.getElementById("status");
 
     status.innerHTML = message;
 }
 
 const setChoices = (p1, p2) => {
-    const status = document.getElementById('choices');
+    const status = document.getElementById("choices");
 
     if (p1 && p2) {
         const choices = {
-            rock: 'pedra',
-            paper: 'papel',
-            scissor: 'tesoura'
+            rock: "pedra",
+            paper: "papel",
+            scissor: "tesoura"
         }
 
         status.innerHTML = `${choices[p1]} X ${choices[p2]}`;
     } else {
-        status.innerHTML = '';
+        status.innerHTML = "";
     }
 }
 
 const applyResult = (result) => {
-    setStatus('<div id="spinner"></div>');
+    setStatus("<div id='spinner'></div>");
 
     setTimeout(() => {
         removeAppliedOption();
 
         switch (result.winner) {
-            case 'P1':
-                setStatus('Jogador #1 ganhou !');
+            case "P1":
+                setStatus("Jogador #1 ganhou !");
                 break;
-            case 'P2':
-                setStatus('Jogador #2 ganhou !');
+            case "P2":
+                setStatus("Jogador #2 ganhou !");
                 break;
             default:
-                setStatus('Empate !');
+                setStatus("Empate !");
                 break;
         }
 
@@ -77,34 +77,34 @@ const applyResult = (result) => {
 
 const play = (choice) => {
     ws.send(JSON.stringify({
-        action: 'play',
+        action: "play",
         choice: choice
     }));
 }
 
 const removeAppliedOption = () => {
-    const options = document.querySelectorAll('.option');
+    const options = document.querySelectorAll(".option");
 
     options.forEach(option => {
-        option.classList.remove('selected');
+        option.classList.remove("selected");
     });
 }
 
 const applyOption = () => {
-    const options = document.querySelectorAll('.option');
+    const options = document.querySelectorAll(".option");
 
     options.forEach(option => {
-        option.addEventListener('click', function () {
+        option.addEventListener("click", function () {
             removeAppliedOption();
 
-            const choice = this.getAttribute('data-choice');
+            const choice = this.getAttribute("data-choice");
 
             play(choice);
 
-            this.classList.add('selected');
+            this.classList.add("selected");
 
-            setChoices('', '');
-            setStatus('Espere a jogada do adversário');
+            setChoices("", "");
+            setStatus("Espere a jogada do adversário");
         });
     });
 }
